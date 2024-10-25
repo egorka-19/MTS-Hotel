@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "718751744596",
+    "project_id": "mts-hotel",
+    "storage_bucket": "mts-hotel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718751744596:android:e9ef62b45185a2430a23c1",
+        "android_client_info": {
+          "package_name": "com.example.mts_hotel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkyzStxbIjltXGz0h--wwCHuzmIKXm8Eo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

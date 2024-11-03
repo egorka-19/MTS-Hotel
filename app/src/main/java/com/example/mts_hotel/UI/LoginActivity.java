@@ -1,7 +1,11 @@
 package com.example.mts_hotel.UI;
 
+import static android.app.PendingIntent.getActivity;
+
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -47,8 +51,6 @@ public class LoginActivity extends AppCompatActivity {
         loginPasswordInput = (EditText) findViewById(R.id.login_password_input);
         loginPhoneInput = (EditText) findViewById(R.id.login_phone_input);
         loadingBar = new ProgressDialog(this);
-        AdminLink = (TextView) findViewById(R.id.admin_panel_link);
-        NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
         checkBoxRememberMe = (CheckBox) findViewById(R.id.login_checkbox);
         Paper.init(this);
         swipeButton.setOnClickListener(new View.OnClickListener() {
@@ -64,17 +66,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUser();
-            }
-        });
-        NotAdminLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AdminLink.setVisibility(View.VISIBLE);
-                NotAdminLink.setVisibility(View.INVISIBLE);
-                Toast.makeText(LoginActivity.this, "Успешный вход!", Toast.LENGTH_SHORT).show();
-//                loginButton.setText("Войти");
-                parentDbName = "Users";
-                checkBoxRememberMe.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -123,8 +114,11 @@ public class LoginActivity extends AppCompatActivity {
                                 loadingBar.dismiss();
                                 Toast.makeText(LoginActivity.this, "Успешный вход!", Toast.LENGTH_SHORT).show();
                                 Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
-                                homeIntent.putExtra("phone", phone);
-                                System.out.println("login" + phone);
+                                SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("phone", phone);
+                                editor.apply();
+
                                 startActivity(homeIntent);
 
                             }

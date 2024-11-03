@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -22,6 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mts_hotel.R;
+import com.example.mts_hotel.UI.LoginActivity;
+import com.example.mts_hotel.UI.RegisterActivity;
 import com.example.mts_hotel.UI.Users.settings;
 import com.example.mts_hotel.databinding.FragmentProfileBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,14 +35,16 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.UploadTask;
 
+import org.w3c.dom.Text;
+
 import java.io.IOException;
 
 
 public class ProfileFragment extends Fragment {
     private FragmentProfileBinding binding;
     private Uri filePath;
+    TextView phonee;
     public String phone;
-
     //private List<publish> PublishList = new ArrayList<>();
 
     RecyclerView recyclepublish;
@@ -48,9 +53,12 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
-
         phone = requireActivity().getIntent().getStringExtra("phone");
 
+        phonee = binding.getRoot().findViewById(R.id.phone);
+        phonee.setText(phone);
+
+        System.out.println(phone);
         loadUserInfo();
 
         binding.profileImageView.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +74,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ProfileFragment.this.getActivity(), settings.class));
+            }
+        });
+
+        binding.logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileFragment.this.getActivity(), LoginActivity.class));
             }
         });
 
@@ -111,7 +126,7 @@ public class ProfileFragment extends Fragment {
                                 // Очищаем кеш Glide перед загрузкой нового изображения
                                 Glide.with(getContext())
                                         .load(profileImage)
-                                        .placeholder(R.drawable.loggg)
+                                        .placeholder(R.drawable.image)
                                         .skipMemoryCache(true)  // Пропускаем кеш памяти
                                         .into(binding.profileImageView);
                             } else {
@@ -167,7 +182,7 @@ public class ProfileFragment extends Fragment {
                                                             // Очищаем кеш Glide для обновления изображения
                                                             Glide.with(getContext())
                                                                     .load(uri)
-                                                                    .placeholder(R.drawable.down_splash_citek)
+                                                                    .placeholder(R.drawable.image)
                                                                     .skipMemoryCache(true)  // Пропускаем кеш памяти
                                                                     .into(binding.profileImageView);
                                                         }

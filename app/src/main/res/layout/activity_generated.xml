@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backkkk"
-    tools:context=".bottomnav.main.MainFragment">
+    tools:context=".bottomnav.main.GeneratedActivity">
 
     <ImageView
         android:id="@+id/imageView11"
@@ -39,52 +39,12 @@
         app:layout_constraintTop_toTopOf="@+id/imageView12"
         app:layout_constraintVertical_bias="0.6" />
 
-    <ImageButton
-        android:id="@+id/but_gal"
-        android:layout_width="328dp"
-        android:layout_height="201dp"
-        android:layout_marginTop="180dp"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        android:src="@drawable/from_gallery"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/but_skan"
-        android:layout_width="345dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="8dp"
-        android:background="@null"
-        android:scaleType="centerCrop"
-        android:src="@drawable/but_skan"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/but_gal" />
-
-    <ImageButton
-        android:id="@+id/but_gen"
-        android:layout_width="336dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="660dp"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        android:src="@drawable/but_generation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/new_image"
         android:layout_width="380dp"
         android:layout_height="300dp"
         android:layout_marginTop="170dp"
-        android:src="@drawable/ava_robik"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,14 +53,27 @@
         app:strokeColor="@color/black"
         app:strokeWidth="4dp" />
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="240dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="48dp"
-        android:src="@drawable/welcometwo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/new_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="336dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="660dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/save"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

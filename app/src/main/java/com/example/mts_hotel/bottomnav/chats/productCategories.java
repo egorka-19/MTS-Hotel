@@ -164,6 +164,7 @@ public class productCategories {
         return list;
     }
 
+
     public List<String> getCharacteristics(String category) {
         return productCategories.get(category);
     }

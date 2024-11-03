@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/main"
-        android:icon="@drawable/korzina"
-        android:title="Главная" />
+        android:icon="@drawable/vector"
+        android:title="Скан" />
 
     <item
         android:id="@+id/chats"

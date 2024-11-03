@@ -6,26 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".bottomnav.chats.ChatActivity">
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:src="@drawable/top_chats"
+        android:layout_width="419dp"
+        android:layout_height="93dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/robik_online"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/hes_message1"
-        android:layout_width="230dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:background="@drawable/message_from_curr_user"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/message_background_with_shadow"
         android:padding="10dp"
         android:singleLine="false"
-        android:text="Привет! Меня зовут Робик, я твой персональный консультант? Задай мне любой вопрос, а я отвечу на него."
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/robik_text"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
 
     <TextView
         android:id="@+id/you_message"
@@ -69,14 +86,23 @@
     <ImageButton
         android:id="@+id/send"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
+        android:layout_height="57dp"
         android:layout_marginEnd="10dp"
-
         android:backgroundTint="@android:color/transparent"
+        android:scaleType="centerCrop"
         android:src="@drawable/send_icon"
         app:layout_constraintBottom_toBottomOf="@+id/enter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/enter" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/ava_robik" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
